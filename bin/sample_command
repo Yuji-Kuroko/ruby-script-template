@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require File.expand_path('../../config/application', __FILE__)
+
+class SampleCommand < Thor
+  desc 'sample', 'puts hello'
+  def sample
+    puts 'hello'
+  end
+end
+
+SampleCommand.start(ARGV)

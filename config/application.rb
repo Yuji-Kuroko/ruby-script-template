@@ -1,6 +1,8 @@
-#! /bin/sh
-exec ruby -S -x "$0" "$@"
-#! ruby
+class App
+  def self.root
+    File.dirname(__FILE__)
+  end
+end
 
 require 'bundler/setup'
 Bundler.require
@@ -8,13 +10,7 @@ require 'active_support'
 require 'active_support/inflector'
 require 'active_support/core_ext'
 require 'highline/import'
-
-
-class App
-  def self.root
-    File.dirname(__FILE__)
-  end
-end
+require 'thor'
 
 # initializer
 Dir.glob("#{App.root}/config/initializer/*.rb").each do |require_path|
@@ -25,6 +21,3 @@ end
 Dir.glob("#{App.root}/app/**/*.rb") do |require_path|
   require require_path
 end
-
-# write here
-puts Settings.foo.bar

@@ -21,14 +21,18 @@ foo:
 
 と書けば、 `Settings.foo.bar` で取得可能です。
 
-### ruby-script-template
+### bin/console
 
-実行ファイルです。ここの下部に追記します。  
-基本的にはコピーやリネームして使用する想定です。
+デバッグ用コンソールを開きます。
+
+### bin/sample_command
+
+サンプル実行ファイルです。
+適切なファイル名やクラス名にリネームしてください。
 
 ## How to execute
 
 ```
 bundle install --path vendor/bundle
-./ruby-script-template
+bin/sample_command sample
 ```
