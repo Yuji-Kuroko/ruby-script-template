@@ -1,6 +1,6 @@
 class App
   def self.root
-    File.dirname(__FILE__)
+    File.expand_path('../../', __FILE__)
   end
 end
 
